@@ -5,28 +5,13 @@ namespace ithappy.Animals_FREE
     [RequireComponent(typeof(CreatureMover))]
     public class MovePlayerInput : MonoBehaviour
     {
-        [Header("Character")]
-        [SerializeField]
-        private string m_HorizontalAxis = "Horizontal";
-        [SerializeField]
-        private string m_VerticalAxis = "Vertical";
-        [SerializeField]
-        private string m_JumpButton = "Jump";
-        [SerializeField]
-        private KeyCode m_RunKey = KeyCode.LeftShift;
-
         [Header("Camera")]
         [SerializeField]
         private PlayerCamera m_Camera;
-        [SerializeField]
-        private string m_MouseX = "Mouse X";
-        [SerializeField]
-        private string m_MouseY = "Mouse Y";
-        [SerializeField]
-        private string m_MouseScroll = "Mouse ScrollWheel";
 
         private CreatureMover m_Mover;
 
+        // Inputs abstractos
         private Vector2 m_Axis;
         private bool m_IsRun;
         private bool m_IsJump;
@@ -46,20 +31,28 @@ namespace ithappy.Animals_FREE
             SetInput();
         }
 
+        /// <summary>
+        /// Recibe la entrada desde cualquier fuente (jugador o agente)
+        /// </summary>
         public void GatherInput()
         {
-            m_Axis = new Vector2(Input.GetAxis(m_HorizontalAxis), Input.GetAxis(m_VerticalAxis));
-            m_IsRun = Input.GetKey(m_RunKey);
-            m_IsJump = Input.GetButton(m_JumpButton);
+            m_Axis = Vector2.zero;
+            m_IsRun = false;
+            m_IsJump = false;
 
             m_Target = (m_Camera == null) ? Vector3.zero : m_Camera.Target;
-            m_MouseDelta = new Vector2(Input.GetAxis(m_MouseX), Input.GetAxis(m_MouseY));
-            m_Scroll = Input.GetAxis(m_MouseScroll);
+            m_MouseDelta = Vector2.zero;
+            m_Scroll = 0f;
         }
 
-        public void BindMover(CreatureMover mover)
+        /// <summary>
+        /// Permite que un agente o jugador inyecte los inputs
+        /// </summary>
+        public void SetAction(Vector2 moveAxis, bool run, bool jump)
         {
-            m_Mover = mover;
+            m_Axis = moveAxis;
+            m_IsRun = run;
+            m_IsJump = jump;
         }
 
         public void SetInput()
