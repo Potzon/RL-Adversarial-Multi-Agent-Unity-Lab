@@ -119,6 +119,74 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &46703390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3546373700775453580, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
+  m_PrefabInstance: {fileID: 762764912467697151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &46703397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46703390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Sensors.RayPerceptionSensorComponent3D
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Pray
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 35
+  m_SphereCastRadius: 0
+  m_RayLength: 12
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
+--- !u!1 &566807112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2967544338549165408, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
+  m_PrefabInstance: {fileID: 762764912467697151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &566807117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566807112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Sensors.RayPerceptionSensorComponent3D
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Predator
+  m_RaysPerDirection: 9
+  m_MaxRayDegrees: 102
+  m_SphereCastRadius: 0
+  m_RayLength: 25
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &586693028
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +441,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pray
       objectReference: {fileID: 0}
+    - target: {fileID: 2967544337844992043, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.11
+      objectReference: {fileID: 0}
     - target: {fileID: 2967544338251669790, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -489,81 +561,13 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2967544337844992042, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 2967544338549165408, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 762764912467697155}
-    - targetCorrespondingSourceObject: {fileID: 3546373701170701143, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
+      addedObject: {fileID: 566807117}
+    - targetCorrespondingSourceObject: {fileID: 3546373700775453580, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 762764912467697154}
+      addedObject: {fileID: 46703397}
   m_SourcePrefab: {fileID: 100100000, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
---- !u!1 &762764912467697152 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3546373701170701143, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
-  m_PrefabInstance: {fileID: 762764912467697151}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &762764912467697153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2967544337844992042, guid: 8349b10948e791f4e8e1dc3a55186807, type: 3}
-  m_PrefabInstance: {fileID: 762764912467697151}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &762764912467697154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762764912467697152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Sensors.RayPerceptionSensorComponent3D
-  m_SensorName: RayPerceptionSensor
-  m_DetectableTags:
-  - Pray
-  m_RaysPerDirection: 5
-  m_MaxRayDegrees: 35
-  m_SphereCastRadius: 0
-  m_RayLength: 12
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
-  m_UseBatchedRaycasts: 0
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: 0
---- !u!114 &762764912467697155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762764912467697153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Sensors.RayPerceptionSensorComponent3D
-  m_SensorName: RayPerceptionSensor
-  m_DetectableTags:
-  - Predator
-  m_RaysPerDirection: 9
-  m_MaxRayDegrees: 102
-  m_SphereCastRadius: 0
-  m_RayLength: 25
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
-  m_UseBatchedRaycasts: 0
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

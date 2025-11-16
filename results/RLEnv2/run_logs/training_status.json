@@ -1,7 +1,51 @@
 {
+    "Worm": {
+        "checkpoints": [
+            {
+                "steps": 14512,
+                "file_path": "results\\RLEnv2\\Worm\\Worm-14512.onnx",
+                "reward": 9.748864136636257,
+                "creation_time": 1763294248.8554313,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Worm\\Worm-14512.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 14512,
+            "file_path": "results\\RLEnv2\\Worm.onnx",
+            "reward": 9.748864136636257,
+            "creation_time": 1763294248.8554313,
+            "auxillary_file_paths": [
+                "results\\RLEnv2\\Worm\\Worm-14512.pt"
+            ]
+        }
+    },
+    "Crawler": {
+        "checkpoints": [
+            {
+                "steps": 14540,
+                "file_path": "results\\RLEnv2\\Crawler\\Crawler-14540.onnx",
+                "reward": -0.9959642189562483,
+                "creation_time": 1763294248.8995113,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Crawler\\Crawler-14540.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 14540,
+            "file_path": "results\\RLEnv2\\Crawler.onnx",
+            "reward": -0.9959642189562483,
+            "creation_time": 1763294248.8995113,
+            "auxillary_file_paths": [
+                "results\\RLEnv2\\Crawler\\Crawler-14540.pt"
+            ]
+        }
+    },
     "metadata": {
         "stats_format_version": "0.3.0",
-        "mlagents_version": "1.1.0",
-        "torch_version": "2.9.1+cpu"
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.5.1+cu121"
     }
 }
