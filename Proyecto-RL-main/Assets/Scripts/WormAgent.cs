@@ -69,8 +69,16 @@ public class WormAgent : Agent
         //Random start rotation to help generalize
         bodySegment0.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
 
+        bodySegment0.localPosition = GetRandomPosition();
+
         UpdateOrientationObjects();
     }
+
+    private Vector3 GetRandomPosition()
+        {
+            return new Vector3(Random.Range(-47f, 29f), 1.15f, Random.Range(-37, 31f));
+            
+        }
 
     /// <summary>
     /// Add relevant information on each body part to observations.

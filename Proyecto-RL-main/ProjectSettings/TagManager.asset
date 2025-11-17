@@ -7,13 +7,15 @@ TagManager:
   - Predator
   - Wall
   - Obstacle
-  - Pray
   - ground
   - agent
   - pyramid
   - wall
   - switchOff
   - block
+  - target
+  - key
+  - Prey
   layers:
   - Default
   - TransparentFX

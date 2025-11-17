@@ -419,6 +419,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1308548959590070763, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308548959645167996, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308548960282100786, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_TagString
+      value: Prey
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308548960282100787, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308548960282100787, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1308548960282100792, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: TargetPrefab
       value: 
@@ -431,9 +451,17 @@ PrefabInstance:
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 1308548960620694200, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308548960682589568, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3326960919468667008, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.10472
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3326960919468667008, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_LocalPosition.y
@@ -441,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3326960919468667008, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.01889
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3326960919468667008, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_LocalRotation.w
@@ -471,6 +499,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4008251960987559646, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961408721278, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961410417043, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961684273061, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961826027372, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961826027372, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4008251961826027374, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: TargetPrefab
       value: 
@@ -482,6 +534,14 @@ PrefabInstance:
     - target: {fileID: 4008251961826027375, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961826027378, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_TagString
+      value: Predator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251962974896987, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5184312253121697345, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_Name

@@ -92,6 +92,7 @@ public class CrawlerAgent : Agent
     /// </summary>
     public override void OnEpisodeBegin()
     {
+
         foreach (var bodyPart in m_JdController.bodyPartsDict.Values)
         {
             bodyPart.Reset(bodyPart);
@@ -100,11 +101,18 @@ public class CrawlerAgent : Agent
         //Random start rotation to help generalize
         body.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
 
+        body.localPosition = GetRandomPosition();
+
         UpdateOrientationObjects();
 
         //Set our goal walking speed
         TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
     }
+
+    private Vector3 GetRandomPosition()
+        {
+            return new Vector3(Random.Range(-47f, 29f), 2.006f, Random.Range(-37, 31f));
+        }
 
     /// <summary>
     /// Add relevant information on each body part to observations.
