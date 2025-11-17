@@ -1,117 +1,117 @@
 {
-    "Crawler": {
-        "checkpoints": [
-            {
-                "steps": 999941,
-                "file_path": "results\\RLEnv2\\Crawler\\Crawler-999941.onnx",
-                "reward": 444.5893335143725,
-                "creation_time": 1763345131.8425283,
-                "auxillary_file_paths": [
-                    "results\\RLEnv2\\Crawler\\Crawler-999941.pt"
-                ]
-            },
-            {
-                "steps": 1499964,
-                "file_path": "results\\RLEnv2\\Crawler\\Crawler-1499964.onnx",
-                "reward": 445.5950381755829,
-                "creation_time": 1763348545.9972813,
-                "auxillary_file_paths": [
-                    "results\\RLEnv2\\Crawler\\Crawler-1499964.pt"
-                ]
-            },
-            {
-                "steps": 1999987,
-                "file_path": "results\\RLEnv2\\Crawler\\Crawler-1999987.onnx",
-                "reward": 589.07503638044,
-                "creation_time": 1763351976.1050804,
-                "auxillary_file_paths": [
-                    "results\\RLEnv2\\Crawler\\Crawler-1999987.pt"
-                ]
-            },
-            {
-                "steps": 2499944,
-                "file_path": "results\\RLEnv2\\Crawler\\Crawler-2499944.onnx",
-                "reward": 1467.8451616764069,
-                "creation_time": 1763355402.927752,
-                "auxillary_file_paths": [
-                    "results\\RLEnv2\\Crawler\\Crawler-2499944.pt"
-                ]
-            },
-            {
-                "steps": 2575518,
-                "file_path": "results\\RLEnv2\\Crawler\\Crawler-2575518.onnx",
-                "reward": 1243.9594745773536,
-                "creation_time": 1763355925.8880265,
-                "auxillary_file_paths": [
-                    "results\\RLEnv2\\Crawler\\Crawler-2575518.pt"
-                ]
-            }
-        ],
-        "final_checkpoint": {
-            "steps": 2575518,
-            "file_path": "results\\RLEnv2\\Crawler.onnx",
-            "reward": 1243.9594745773536,
-            "creation_time": 1763355925.8880265,
-            "auxillary_file_paths": [
-                "results\\RLEnv2\\Crawler\\Crawler-2575518.pt"
-            ]
-        }
-    },
     "Worm": {
         "checkpoints": [
             {
-                "steps": 999988,
-                "file_path": "results\\RLEnv2\\Worm\\Worm-999988.onnx",
-                "reward": 10.798655080678873,
-                "creation_time": 1763345132.0530915,
+                "steps": 999984,
+                "file_path": "results\\RLEnv2\\Worm\\Worm-999984.onnx",
+                "reward": 588.5604014396667,
+                "creation_time": 1763312836.9356332,
                 "auxillary_file_paths": [
-                    "results\\RLEnv2\\Worm\\Worm-999988.pt"
+                    "results\\RLEnv2\\Worm\\Worm-999984.pt"
                 ]
             },
             {
-                "steps": 1499939,
-                "file_path": "results\\RLEnv2\\Worm\\Worm-1499939.onnx",
-                "reward": null,
-                "creation_time": 1763348545.7882586,
+                "steps": 1499984,
+                "file_path": "results\\RLEnv2\\Worm\\Worm-1499984.onnx",
+                "reward": 916.9198799133301,
+                "creation_time": 1763317872.659803,
                 "auxillary_file_paths": [
-                    "results\\RLEnv2\\Worm\\Worm-1499939.pt"
+                    "results\\RLEnv2\\Worm\\Worm-1499984.pt"
                 ]
             },
             {
-                "steps": 1999950,
-                "file_path": "results\\RLEnv2\\Worm\\Worm-1999950.onnx",
-                "reward": 10.702144354581833,
-                "creation_time": 1763351975.812016,
+                "steps": 1659368,
+                "file_path": "results\\RLEnv2\\Worm\\Worm-1659368.onnx",
+                "reward": 1040.7199204762776,
+                "creation_time": 1763319615.4901445,
                 "auxillary_file_paths": [
-                    "results\\RLEnv2\\Worm\\Worm-1999950.pt"
+                    "results\\RLEnv2\\Worm\\Worm-1659368.pt"
                 ]
             },
             {
-                "steps": 2499950,
-                "file_path": "results\\RLEnv2\\Worm\\Worm-2499950.onnx",
-                "reward": 10.19520201186339,
-                "creation_time": 1763355403.0134254,
+                "steps": 1999944,
+                "file_path": "results\\RLEnv2\\Worm\\Worm-1999944.onnx",
+                "reward": 1109.0334396362305,
+                "creation_time": 1763335581.8993337,
                 "auxillary_file_paths": [
-                    "results\\RLEnv2\\Worm\\Worm-2499950.pt"
+                    "results\\RLEnv2\\Worm\\Worm-1999944.pt"
                 ]
             },
             {
-                "steps": 2575532,
-                "file_path": "results\\RLEnv2\\Worm\\Worm-2575532.onnx",
-                "reward": 9.90767341036172,
-                "creation_time": 1763355925.9270961,
+                "steps": 2086944,
+                "file_path": "results\\RLEnv2\\Worm\\Worm-2086944.onnx",
+                "reward": 1175.6669039045062,
+                "creation_time": 1763336393.237135,
                 "auxillary_file_paths": [
-                    "results\\RLEnv2\\Worm\\Worm-2575532.pt"
+                    "results\\RLEnv2\\Worm\\Worm-2086944.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 2575532,
+            "steps": 2086944,
             "file_path": "results\\RLEnv2\\Worm.onnx",
-            "reward": 9.90767341036172,
-            "creation_time": 1763355925.9270961,
+            "reward": 1175.6669039045062,
+            "creation_time": 1763336393.237135,
             "auxillary_file_paths": [
-                "results\\RLEnv2\\Worm\\Worm-2575532.pt"
+                "results\\RLEnv2\\Worm\\Worm-2086944.pt"
+            ]
+        }
+    },
+    "Crawler": {
+        "checkpoints": [
+            {
+                "steps": 999945,
+                "file_path": "results\\RLEnv2\\Crawler\\Crawler-999945.onnx",
+                "reward": 212.37356811761856,
+                "creation_time": 1763312836.4360633,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Crawler\\Crawler-999945.pt"
+                ]
+            },
+            {
+                "steps": 1499941,
+                "file_path": "results\\RLEnv2\\Crawler\\Crawler-1499941.onnx",
+                "reward": null,
+                "creation_time": 1763317872.138102,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Crawler\\Crawler-1499941.pt"
+                ]
+            },
+            {
+                "steps": 1659391,
+                "file_path": "results\\RLEnv2\\Crawler\\Crawler-1659391.onnx",
+                "reward": 557.3129993736744,
+                "creation_time": 1763319615.5382764,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Crawler\\Crawler-1659391.pt"
+                ]
+            },
+            {
+                "steps": 1999996,
+                "file_path": "results\\RLEnv2\\Crawler\\Crawler-1999996.onnx",
+                "reward": 296.26678693294525,
+                "creation_time": 1763335582.134528,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Crawler\\Crawler-1999996.pt"
+                ]
+            },
+            {
+                "steps": 2086978,
+                "file_path": "results\\RLEnv2\\Crawler\\Crawler-2086978.onnx",
+                "reward": 508.79554546160216,
+                "creation_time": 1763336393.2852397,
+                "auxillary_file_paths": [
+                    "results\\RLEnv2\\Crawler\\Crawler-2086978.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2086978,
+            "file_path": "results\\RLEnv2\\Crawler.onnx",
+            "reward": 508.79554546160216,
+            "creation_time": 1763336393.2852397,
+            "auxillary_file_paths": [
+                "results\\RLEnv2\\Crawler\\Crawler-2086978.pt"
             ]
         }
     },
