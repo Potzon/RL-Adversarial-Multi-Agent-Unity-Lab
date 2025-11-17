@@ -134,6 +134,16 @@ public class WormAgent : Agent
         EndEpisode();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Revisamos si el objeto con el que colisionamos es el target
+        if (collision.transform == m_Target)
+        {
+            TouchedTarget();
+        }
+    }
+
+
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // The dictionary with all the body parts in it are in the jdController
