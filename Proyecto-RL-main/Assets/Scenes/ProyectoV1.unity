@@ -277,6 +277,8 @@ MonoBehaviour:
   target1: {fileID: 2125048886}
   target2: {fileID: 383670804}
   smoothingTime: 0.3
+  horizontalDistance: 10
+  height: 8
 --- !u!1 &1621568159
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +418,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1308548960282100793, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3326960919468667008, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.10472

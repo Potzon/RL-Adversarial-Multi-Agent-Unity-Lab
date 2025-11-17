@@ -6,7 +6,7 @@ using Unity.MLAgents.Sensors;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(JointDriveController))] // Required to set joint forces
-public class CrawlerAgent : Agent
+public class CrawlerScript : Agent
 {
 
     [Header("Walk Speed")]
@@ -33,10 +33,6 @@ public class CrawlerAgent : Agent
         set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
     }
 
-    //The direction an agent will walk during training.
-    [Header("Target To Walk Towards")]
-    public Transform TargetPrefab; //Target prefab to use in Dynamic envs
-    private Transform m_Target; //Target the agent will walk towards during training.
 
     [Header("Body Parts")][Space(10)] public Transform body;
     public Transform leg0Upper;
@@ -69,8 +65,6 @@ public class CrawlerAgent : Agent
 
     public override void Initialize()
     {
-        SpawnTarget(TargetPrefab, transform.position); //spawn target
-
         m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
         m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
         m_JdController = GetComponent<JointDriveController>();
@@ -92,10 +86,6 @@ public class CrawlerAgent : Agent
     /// </summary>
     /// <param name="prefab"></param>
     /// <param name="pos"></param>
-    void SpawnTarget(Transform prefab, Vector3 pos)
-    {
-        m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
-    }
 
     /// <summary>
     /// Loop over body parts and reset them to initial conditions.
@@ -151,8 +141,6 @@ public class CrawlerAgent : Agent
         //rotation delta
         sensor.AddObservation(Quaternion.FromToRotation(body.forward, cubeForward));
 
-        //Add pos of target relative to orientation cube
-        sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(m_Target.transform.position));
 
         RaycastHit hit;
         float maxRaycastDist = 10;
@@ -201,49 +189,46 @@ public class CrawlerAgent : Agent
     {
         UpdateOrientationObjects();
 
-        // If enabled the feet will light up green when the foot is grounded.
-        // This is just a visualization and isn't necessary for function
+        // Visualización de pies (opcional)
         if (useFootGroundedVisualization)
         {
             foot0.material = m_JdController.bodyPartsDict[leg0Lower].groundContact.touchingGround
-                ? groundedMaterial
-                : unGroundedMaterial;
+                ? groundedMaterial : unGroundedMaterial;
             foot1.material = m_JdController.bodyPartsDict[leg1Lower].groundContact.touchingGround
-                ? groundedMaterial
-                : unGroundedMaterial;
+                ? groundedMaterial : unGroundedMaterial;
             foot2.material = m_JdController.bodyPartsDict[leg2Lower].groundContact.touchingGround
-                ? groundedMaterial
-                : unGroundedMaterial;
+                ? groundedMaterial : unGroundedMaterial;
             foot3.material = m_JdController.bodyPartsDict[leg3Lower].groundContact.touchingGround
-                ? groundedMaterial
-                : unGroundedMaterial;
+                ? groundedMaterial : unGroundedMaterial;
         }
 
         var cubeForward = m_OrientationCube.transform.forward;
 
-        // Set reward for this step according to mixture of the following elements.
-        // a. Match target speed
-        //This reward will approach 1 if it matches perfectly and approach zero as it deviates
+        // a. Recompensa por coincidir velocidad
         var matchSpeedReward = GetMatchingVelocityReward(cubeForward * TargetWalkingSpeed, GetAvgVelocity());
 
-        // b. Rotation alignment with target direction.
-        //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
-        var lookAtTargetReward = (Vector3.Dot(cubeForward, body.forward) + 1) * .5F;
+        // b. Recompensa por estar alineado con la dirección de avance
+        var lookAtTargetReward = (Vector3.Dot(cubeForward, body.forward) + 1) * 0.5f;
 
         AddReward(matchSpeedReward * lookAtTargetReward);
     }
+
+
 
     /// <summary>
     /// Update OrientationCube and DirectionIndicator
     /// </summary>
     void UpdateOrientationObjects()
     {
-        m_OrientationCube.UpdateOrientation(body, m_Target);
+        m_OrientationCube.transform.position = body.position;
+        m_OrientationCube.transform.forward = body.forward;
+
         if (m_DirectionIndicator)
         {
             m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
         }
     }
+
 
     /// <summary>
     ///Returns the average velocity of all of the body parts
@@ -283,8 +268,20 @@ public class CrawlerAgent : Agent
     /// <summary>
     /// Agent touched the target
     /// </summary>
-    public void TouchedTarget()
+    void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Pray"))
+            {
+                AddReward(15f);
+                EndEpisode();
+            }
+        }
+    
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
-        AddReward(1f);
+        var continuousActions = actionsOut.ContinuousActions;
+        for (int i = 0; i < continuousActions.Length; i++)
+            continuousActions[i] = 0f; // placeholder
     }
 }
+

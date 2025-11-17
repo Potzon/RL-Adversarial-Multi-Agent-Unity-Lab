@@ -5,12 +5,10 @@ using Unity.MLAgentsExamples;
 using Unity.MLAgents.Sensors;
 
 [RequireComponent(typeof(JointDriveController))] // Required to set joint forces
-public class WormAgent : Agent
+public class WormScript : Agent
 {
     const float m_MaxWalkingSpeed = 10; //The max walking speed
 
-    [Header("Target Prefabs")] public Transform TargetPrefab; //Target prefab to use in Dynamic envs
-    private Transform m_Target; //Target the agent will walk towards during training.
 
     [Header("Body Parts")] public Transform bodySegment0;
     public Transform bodySegment1;
@@ -29,7 +27,6 @@ public class WormAgent : Agent
 
     public override void Initialize()
     {
-        SpawnTarget(TargetPrefab, transform.position); //spawn target
 
         m_StartingPos = bodySegment0.position;
         m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
@@ -51,10 +48,7 @@ public class WormAgent : Agent
     /// </summary>
     /// <param name="prefab"></param>
     /// <param name="pos"></param>
-    void SpawnTarget(Transform prefab, Vector3 pos)
-    {
-        m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
-    }
+   
 
     /// <summary>
     /// Loop over body parts and reset them to initial conditions.
@@ -100,29 +94,22 @@ public class WormAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        RaycastHit hit;
-        float maxDist = 10;
-        if (Physics.Raycast(bodySegment0.position, Vector3.down, out hit, maxDist))
-        {
-            sensor.AddObservation(hit.distance / maxDist);
-        }
-        else
-            sensor.AddObservation(1);
+        // Velocidad del cuerpo principal relativa al OrientationCube
+        sensor.AddObservation(
+            m_OrientationCube.transform.InverseTransformDirection(
+                m_JdController.bodyPartsDict[bodySegment0].rb.linearVelocity));
 
-        var cubeForward = m_OrientationCube.transform.forward;
-        var velGoal = cubeForward * m_MaxWalkingSpeed;
-        sensor.AddObservation(m_OrientationCube.transform.InverseTransformDirection(velGoal));
-        sensor.AddObservation(Quaternion.Angle(m_OrientationCube.transform.rotation,
-                                  m_JdController.bodyPartsDict[bodySegment0].rb.rotation) / 180);
-        sensor.AddObservation(Quaternion.FromToRotation(bodySegment0.forward, cubeForward));
+        // Rotación del cuerpo respecto al OrientationCube
+        sensor.AddObservation(
+            Quaternion.FromToRotation(bodySegment0.forward, m_OrientationCube.transform.forward));
 
-        //Add pos of target relative to orientation cube
-        sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(m_Target.transform.position));
-
+        // Observaciones de todas las partes del cuerpo
         foreach (var bodyPart in m_JdController.bodyPartsList)
         {
             CollectObservationBodyPart(bodyPart, sensor);
         }
+
+        // Ray Perception Sensor 3D automáticamente añade información de los rayos
     }
 
     /// <summary>
@@ -161,27 +148,24 @@ public class WormAgent : Agent
     {
         UpdateOrientationObjects();
 
-        var velReward =
-            GetMatchingVelocityReward(m_OrientationCube.transform.forward * m_MaxWalkingSpeed,
-                m_JdController.bodyPartsDict[bodySegment0].rb.linearVelocity);
+        // Recompensa básica por moverse estable
+        var velReward = GetMatchingVelocityReward(
+            m_OrientationCube.transform.forward * m_MaxWalkingSpeed,
+            m_JdController.bodyPartsDict[bodySegment0].rb.linearVelocity);
 
-        //Angle of the rotation delta between cube and body.
-        //This will range from (0, 180)
-        var rotAngle = Quaternion.Angle(m_OrientationCube.transform.rotation,
+        // Recompensa por rotación estable
+        var rotAngle = Quaternion.Angle(
+            m_OrientationCube.transform.rotation,
             m_JdController.bodyPartsDict[bodySegment0].rb.rotation);
+        var facingRew = 1 - (rotAngle / 180);
 
-        //The reward for facing the target
-        var facingRew = 0f;
-        //If we are within 30 degrees of facing the target
-        if (rotAngle < 30)
-        {
-            //Set normalized facingReward
-            //Facing the target perfectly yields a reward of 1
-            facingRew = 1 - (rotAngle / 180);
-        }
-
-        //Add the product of these two rewards
         AddReward(velReward * facingRew);
+
+        // Reinicio si cae
+        if (bodySegment0.position.y < m_StartingPos.y - 2)
+        {
+            EndEpisode();
+        }
     }
 
     /// <summary>
@@ -197,15 +181,37 @@ public class WormAgent : Agent
         return Mathf.Pow(1 - Mathf.Pow(velDeltaMagnitude / m_MaxWalkingSpeed, 2), 2);
     }
 
+    void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Predator"))
+            {
+                AddReward(-15f);
+                EndEpisode();
+            }
+        }
+
+
     /// <summary>
     /// Update OrientationCube and DirectionIndicator
     /// </summary>
     void UpdateOrientationObjects()
     {
-        m_OrientationCube.UpdateOrientation(bodySegment0, m_Target);
+        // Solo actualiza la posición y forward del OrientationCube para referencia
+        m_OrientationCube.transform.position = bodySegment0.position;
+        // El forward puede ser simplemente hacia la dirección actual de movimiento
+        m_OrientationCube.transform.forward = bodySegment0.forward;
+
         if (m_DirectionIndicator)
         {
             m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
         }
     }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var continuousActions = actionsOut.ContinuousActions;
+        for (int i = 0; i < continuousActions.Length; i++)
+            continuousActions[i] = 0f; // placeholder
+    }
+
 }
