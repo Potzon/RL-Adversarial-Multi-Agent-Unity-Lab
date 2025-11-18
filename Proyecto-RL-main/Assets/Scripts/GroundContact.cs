@@ -36,12 +36,12 @@ namespace Unity.MLAgentsExamples
 
                 if (agentDoneOnGroundContact)
                 {
-                   /*  agent.EndEpisode();  */
+                    agent.EndEpisode();
                 }
             }
             if (col.transform.CompareTag("Prey"))
             {
-                Debug.Log("presa");
+                Debug.Log("presa atrapada!!");
 
                 // Recompensa del depredador
                 agent.AddReward(presaContactReward);
