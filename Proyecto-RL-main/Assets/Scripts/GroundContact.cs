@@ -29,7 +29,7 @@ namespace Unity.MLAgentsExamples
             if (col.transform.CompareTag(k_Ground))
             {
                 touchingGround = true;
-                if (penalizeGroundContact)
+                /* if (penalizeGroundContact)
                 {
                     Debug.Log(agent.GetCumulativeReward().ToString("F2"));
                     agent.AddReward(groundContactPenalty);
@@ -39,7 +39,7 @@ namespace Unity.MLAgentsExamples
                 {
                     Debug.Log(agent.GetCumulativeReward().ToString("F2"));
                     agent.EndEpisode();
-                }
+                } */
             }
             if (col.transform.CompareTag("Prey"))
             {

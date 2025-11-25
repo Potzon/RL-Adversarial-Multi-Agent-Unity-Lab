@@ -38,7 +38,7 @@ public class CrawlerAgent : Agent
     public Transform TargetPrefab; //Target prefab to use in Dynamic envs
     private Transform m_Target; //Target the agent will walk towards during training.
 
-    private float lastDistanceToPrey;
+    private float minDistanceToPrey;
 
 
     [Header("Body Parts")][Space(10)] public Transform body;
@@ -101,7 +101,7 @@ public class CrawlerAgent : Agent
             bodyPart.Reset(bodyPart);
         }
 
-        lastDistanceToPrey = Vector3.Distance(body.position, m_Target.position);
+        minDistanceToPrey = Vector3.Distance(body.position, m_Target.position);
 
         //Random start rotation to help generalize
         /* body.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0); */
@@ -223,19 +223,18 @@ public class CrawlerAgent : Agent
         AddReward(-0.0005f); // penalización suave
 
         float currentDist = Vector3.Distance(body.position, m_Target.position);
-        float delta = lastDistanceToPrey - currentDist;
+        float delta = minDistanceToPrey - currentDist;
 
-        if (delta > 0)
+        if (delta > 0) //Si está más cerca
             AddReward(delta * 0.5f);
-        else
-            AddReward(delta * 0.2f);
+            minDistanceToPrey = currentDist;
 
-        lastDistanceToPrey = currentDist;
+        
 
         Vector3 forward = m_OrientationCube.transform.forward;
         Vector3 toPrey = (m_Target.position - body.position).normalized;
         float alignment = Vector3.Dot(forward, toPrey);
-        AddReward(alignment * 0.01f);
+        AddReward(alignment * 0.01f); //Si mira hacia la presa
 
         // 1) Velocidad hacia la presa
         float forwardSpeed = Vector3.Dot(GetAvgVelocity(), toPrey);
@@ -245,10 +244,7 @@ public class CrawlerAgent : Agent
         if (GetAvgVelocity().magnitude < 0.2f)
             AddReward(-0.01f);
 
-        // 3) Castigo leve por distancia absoluta
-        AddReward(-(currentDist * 0.0005f));
-
-        // 4) Reward por igualar velocidad objetivo
+        // 3) Reward por igualar velocidad objetivo
         Vector3 velGoal = toPrey * TargetWalkingSpeed;
         float velReward = GetMatchingVelocityReward(velGoal, GetAvgVelocity());
         AddReward(velReward * 0.05f);
