@@ -3,75 +3,69 @@ using Unity.MLAgents;
 
 namespace Unity.MLAgentsExamples
 {
-    /// <summary>
-    /// This class contains logic for locomotion agents with joints which might make contact with the ground.
-    /// By attaching this as a component to those joints, their contact with the ground can be used as either
-    /// an observation for that agent, and/or a means of punishing the agent for making undesirable contact.
-    /// </summary>
     [DisallowMultipleComponent]
     public class GroundContact : MonoBehaviour
     {
         [HideInInspector] public Agent agent;
 
-        [Header("Ground Check")] public bool agentDoneOnGroundContact; // Whether to reset agent on ground contact.
-        public bool penalizeGroundContact; // Whether to penalize on contact.
-        public float groundContactPenalty; // Penalty amount (ex: -1).
+        [Header("Ground Check")] 
+        public bool agentDoneOnGroundContact; 
+        public bool penalizeGroundContact; 
+        public float groundContactPenalty; 
 
         public float presaContactReward;
         public bool touchingGround;
-        const string k_Ground = "ground"; // Tag of ground object.
+        const string k_Ground = "ground"; 
 
-        /// <summary>
-        /// Check for collision with ground, and optionally penalize agent.
-        /// </summary>
+        private bool hasTouchedPrey = false;
+
         void OnCollisionEnter(Collision col)
         {
+            // --- Colisión con el suelo ---
             if (col.transform.CompareTag(k_Ground))
             {
                 touchingGround = true;
                 /* if (penalizeGroundContact)
-                {
-                    Debug.Log(agent.GetCumulativeReward().ToString("F2"));
                     agent.AddReward(groundContactPenalty);
-                }
-
                 if (agentDoneOnGroundContact)
-                {
-                    Debug.Log(agent.GetCumulativeReward().ToString("F2"));
-                    agent.EndEpisode();
-                } */
+                    agent.EndEpisode(); */
             }
-            if (col.transform.CompareTag("Prey"))
+
+            // --- Colisión con la presa ---
+            if (col.transform.CompareTag("Prey") && !hasTouchedPrey)
             {
-                Debug.Log("presa atrapada!!");
+                hasTouchedPrey = true;
 
-                // Recompensa del depredador
-                agent.AddReward(presaContactReward);
-                agent.EndEpisode();
-
-                // Buscar el Agent en el root de la presa
+                // Asegurarse de que la presa tenga un Agent y que NO sea el propio depredador
                 Agent preyAgent = col.transform.GetComponentInParent<Agent>();
+                if (preyAgent == null)
+                {
+                    Debug.LogError("No se encontró Agent en el objeto Prey");
+                    return;
+                }
 
-                if (preyAgent != null)
-                {
-                    /* preyAgent.AddReward(-presaContactReward);
-                    preyAgent.EndEpisode(); */
-                }
-                else
-                {
-                    Debug.LogError("No se encontró el Agent en el objeto Prey ni en sus padres.");
-                }
+                // Evitar falsos positivos por colisiones internas de la presa
+                if (preyAgent == agent) return;
+
+                agent.AddReward(presaContactReward);
+
+                // Penalizar y terminar la presa
+                preyAgent.AddReward(-presaContactReward);
+
+                Debug.Log($"Reward depredador: {agent.GetCumulativeReward()} --- Reward gusano: {preyAgent.GetCumulativeReward()}");
+                Debug.Log($"COLLISION: {name} con {col.collider.name} | frame {Time.frameCount}");
+
+                preyAgent.EndEpisode();
+                agent.EndEpisode();
             }
         }
 
-        /// <summary>
-        /// Check for end of ground collision and reset flag appropriately.
-        /// </summary>
         void OnCollisionExit(Collision other)
         {
             if (other.transform.CompareTag(k_Ground))
             {
                 touchingGround = false;
+                hasTouchedPrey = false;
             }
         }
     }

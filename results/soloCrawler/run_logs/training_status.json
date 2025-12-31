@@ -2,22 +2,58 @@
     "Crawler": {
         "checkpoints": [
             {
-                "steps": 455232,
-                "file_path": "results\\soloCrawler\\Crawler\\Crawler-455232.onnx",
-                "reward": 51.47498631477356,
-                "creation_time": 1763830892.2833343,
+                "steps": 330750,
+                "file_path": "results\\soloCrawler\\Crawler\\Crawler-330750.onnx",
+                "reward": 54.13666846283844,
+                "creation_time": 1766960903.6014876,
                 "auxillary_file_paths": [
-                    "results\\soloCrawler\\Crawler\\Crawler-455232.pt"
+                    "results\\soloCrawler\\Crawler\\Crawler-330750.pt"
+                ]
+            },
+            {
+                "steps": 499947,
+                "file_path": "results\\soloCrawler\\Crawler\\Crawler-499947.onnx",
+                "reward": 53.3743713412966,
+                "creation_time": 1767012865.192661,
+                "auxillary_file_paths": [
+                    "results\\soloCrawler\\Crawler\\Crawler-499947.pt"
+                ]
+            },
+            {
+                "steps": 747825,
+                "file_path": "results\\soloCrawler\\Crawler\\Crawler-747825.onnx",
+                "reward": 53.316005624455514,
+                "creation_time": 1767015009.7354255,
+                "auxillary_file_paths": [
+                    "results\\soloCrawler\\Crawler\\Crawler-747825.pt"
+                ]
+            },
+            {
+                "steps": 784398,
+                "file_path": "results\\soloCrawler\\Crawler\\Crawler-784398.onnx",
+                "reward": 53.296408267421576,
+                "creation_time": 1767023442.550009,
+                "auxillary_file_paths": [
+                    "results\\soloCrawler\\Crawler\\Crawler-784398.pt"
+                ]
+            },
+            {
+                "steps": 933160,
+                "file_path": "results\\soloCrawler\\Crawler\\Crawler-933160.onnx",
+                "reward": 53.29845404991737,
+                "creation_time": 1767024441.560637,
+                "auxillary_file_paths": [
+                    "results\\soloCrawler\\Crawler\\Crawler-933160.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 455232,
+            "steps": 933160,
             "file_path": "results\\soloCrawler\\Crawler.onnx",
-            "reward": 51.47498631477356,
-            "creation_time": 1763830892.2833343,
+            "reward": 53.29845404991737,
+            "creation_time": 1767024441.560637,
             "auxillary_file_paths": [
-                "results\\soloCrawler\\Crawler\\Crawler-455232.pt"
+                "results\\soloCrawler\\Crawler\\Crawler-933160.pt"
             ]
         }
     },

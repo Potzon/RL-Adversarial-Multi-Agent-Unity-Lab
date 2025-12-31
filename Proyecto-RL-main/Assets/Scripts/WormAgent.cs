@@ -9,6 +9,8 @@ public class WormAgent : Agent
 {
     const float m_MaxSpeed = 10;
 
+    private float previousDist;
+
     [Header("Predator reference")]
     public Transform predator;   // <<< EL DEPREDADOR
 
@@ -128,15 +130,19 @@ public class WormAgent : Agent
 
     void FixedUpdate()
     {
-        UpdateOrientationObjects();
+    UpdateOrientationObjects();
 
-        float dist = Vector3.Distance(bodySegment0.position, predator.position);
+    // 2. Calcula distancia al depredador
+    float dist = Vector3.Distance(bodySegment0.position, predator.position);
+    float delta = dist - previousDist;
 
-        // Recompensa por alejarse
-        AddReward(0.001f * dist);
+    // 3. Recompensa por alejarse o castigo por acercarse
+    AddReward(delta * 0.02f);
 
-        // Penalización si el depredador está cerca
-        AddReward(-0.003f / dist);
+    // 4. Recompensa por sobrevivir este step
+    AddReward(0.001f);
+
+    previousDist = dist;
     }
 
     void UpdateOrientationObjects()

@@ -1,0 +1,65 @@
+{
+    "Worm": {
+        "checkpoints": [
+            {
+                "steps": 5499958,
+                "file_path": "results\\soloWorm\\Worm\\Worm-5499958.onnx",
+                "reward": -43.8747506360213,
+                "creation_time": 1767182792.4473772,
+                "auxillary_file_paths": [
+                    "results\\soloWorm\\Worm\\Worm-5499958.pt"
+                ]
+            },
+            {
+                "steps": 5999971,
+                "file_path": "results\\soloWorm\\Worm\\Worm-5999971.onnx",
+                "reward": -47.60634870827198,
+                "creation_time": 1767185802.2963817,
+                "auxillary_file_paths": [
+                    "results\\soloWorm\\Worm\\Worm-5999971.pt"
+                ]
+            },
+            {
+                "steps": 6251589,
+                "file_path": "results\\soloWorm\\Worm\\Worm-6251589.onnx",
+                "reward": -44.31590221077204,
+                "creation_time": 1767187310.9594307,
+                "auxillary_file_paths": [
+                    "results\\soloWorm\\Worm\\Worm-6251589.pt"
+                ]
+            },
+            {
+                "steps": 6499944,
+                "file_path": "results\\soloWorm\\Worm\\Worm-6499944.onnx",
+                "reward": -47.17325106263161,
+                "creation_time": 1767192171.0264997,
+                "auxillary_file_paths": [
+                    "results\\soloWorm\\Worm\\Worm-6499944.pt"
+                ]
+            },
+            {
+                "steps": 6957276,
+                "file_path": "results\\soloWorm\\Worm\\Worm-6957276.onnx",
+                "reward": -39.062201698239036,
+                "creation_time": 1767195574.4211257,
+                "auxillary_file_paths": [
+                    "results\\soloWorm\\Worm\\Worm-6957276.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 6957276,
+            "file_path": "results\\soloWorm\\Worm.onnx",
+            "reward": -39.062201698239036,
+            "creation_time": 1767195574.4211257,
+            "auxillary_file_paths": [
+                "results\\soloWorm\\Worm\\Worm-6957276.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.5.1+cu121"
+    }
+}

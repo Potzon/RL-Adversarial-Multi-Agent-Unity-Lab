@@ -225,16 +225,18 @@ public class CrawlerAgent : Agent
         float currentDist = Vector3.Distance(body.position, m_Target.position);
         float delta = minDistanceToPrey - currentDist;
 
-        if (delta > 0) //Si está más cerca
+        if (delta > 0)
+        { //Si está más cerca
             AddReward(delta * 0.5f);
             minDistanceToPrey = currentDist;
+        }
 
         
 
         Vector3 forward = m_OrientationCube.transform.forward;
         Vector3 toPrey = (m_Target.position - body.position).normalized;
         float alignment = Vector3.Dot(forward, toPrey);
-        AddReward(alignment * 0.01f); //Si mira hacia la presa
+        /* AddReward(alignment * 0.01f); //Si mira hacia la presa
 
         // 1) Velocidad hacia la presa
         float forwardSpeed = Vector3.Dot(GetAvgVelocity(), toPrey);
@@ -247,7 +249,7 @@ public class CrawlerAgent : Agent
         // 3) Reward por igualar velocidad objetivo
         Vector3 velGoal = toPrey * TargetWalkingSpeed;
         float velReward = GetMatchingVelocityReward(velGoal, GetAvgVelocity());
-        AddReward(velReward * 0.05f);
+        AddReward(velReward * 0.05f); */
     }
 
 

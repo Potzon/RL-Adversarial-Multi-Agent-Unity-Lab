@@ -1,0 +1,29 @@
+{
+    "Worm": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\duoCW-V1\\Worm\\Worm-0.onnx",
+                "reward": null,
+                "creation_time": 1767198688.8268383,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Worm\\Worm-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\duoCW-V1\\Worm.onnx",
+            "reward": null,
+            "creation_time": 1767198688.8268383,
+            "auxillary_file_paths": [
+                "results\\duoCW-V1\\Worm\\Worm-0.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.5.1+cu121"
+    }
+}

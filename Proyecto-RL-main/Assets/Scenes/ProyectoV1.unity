@@ -709,7 +709,7 @@ Transform:
   m_GameObject: {fileID: 1183873934}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19826692, y: -0.6208851, z: 0.16636568, w: 0.73994213}
-  m_LocalPosition: {x: 18.189796, y: 5.6, z: 3.1110296}
+  m_LocalPosition: {x: 14.26, y: 8.19, z: -10.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1086,7 +1086,7 @@ Transform:
   m_GameObject: {fileID: 1643540088}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19826692, y: -0.6208851, z: 0.16636568, w: 0.73994213}
-  m_LocalPosition: {x: 18.789795, y: 5.3, z: 8.01103}
+  m_LocalPosition: {x: 12.28, y: 8.22, z: -1.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1217,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1308548960282100792, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: MaxStep
-      value: 0
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 1308548960282100792, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: predator
@@ -1237,7 +1237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1308548960282100793, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_BehaviorType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1308548960282100793, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
@@ -1287,6 +1287,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Prey
       objectReference: {fileID: 0}
+    - target: {fileID: 2279911513629626874, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: presaContactReward
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298023640481755806, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: presaContactReward
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588444154306416750, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588444154306416750, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3326960919468667008, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1331,13 +1347,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Prey
       objectReference: {fileID: 0}
+    - target: {fileID: 3860154557343117207, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860154557343117207, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4008251960987559646, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_ProvidesContacts
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4008251960987559651, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251960987559653, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1365,7 +1389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961408721027, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961408721029, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1381,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961410417044, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961410417046, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1393,7 +1417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961651135978, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961651135980, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1405,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961684273063, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251961684273065, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1434,7 +1458,11 @@ PrefabInstance:
     - target: {fileID: 4008251961826027375, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: c63c88e90bd3e9c4e86e56874fb86a11, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008251961826027375, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4008251961826027375, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 28
@@ -1449,7 +1477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962198145085, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962198145087, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1457,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962454037075, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962454037077, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1469,7 +1497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962491088137, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962491088139, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1489,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962974896988, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: presaContactReward
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4008251962974896990, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
@@ -1507,6 +1535,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Predator
       objectReference: {fileID: 0}
+    - target: {fileID: 4570319036427052448, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570319036427052448, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5184312253121697345, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -1515,9 +1551,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Prey
       objectReference: {fileID: 0}
+    - target: {fileID: 5500248419456427356, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: presaContactReward
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6538682259192152157, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
       propertyPath: m_TagString
       value: Prey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152436525120048863, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152436525120048863, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983752161407698370, guid: ace59e6dbb6b52c4ca41a36bfe8b5949, type: 3}
+      propertyPath: presaContactReward
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
