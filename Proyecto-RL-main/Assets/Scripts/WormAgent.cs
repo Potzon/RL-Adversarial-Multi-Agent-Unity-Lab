@@ -55,6 +55,8 @@ public class WormAgent : Agent
         bodySegment0.position = GetRandomPos(); */
 
         UpdateOrientationObjects();
+        previousDist = Vector3.Distance(bodySegment0.position, predator.position);
+
     }
 
     Vector3 GetRandomPos()
@@ -131,7 +133,6 @@ public class WormAgent : Agent
     void FixedUpdate()
     {
     UpdateOrientationObjects();
-
     // 2. Calcula distancia al depredador
     float dist = Vector3.Distance(bodySegment0.position, predator.position);
     float delta = dist - previousDist;

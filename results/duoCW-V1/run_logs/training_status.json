@@ -1,23 +1,118 @@
 {
-    "Worm": {
+    "Crawler": {
+        "elo": 1202.3339240311013,
         "checkpoints": [
             {
-                "steps": 0,
-                "file_path": "results\\duoCW-V1\\Worm\\Worm-0.onnx",
-                "reward": null,
-                "creation_time": 1767198688.8268383,
+                "steps": 1499956,
+                "file_path": "results\\duoCW-V2\\Crawler\\Crawler-1499956.onnx",
+                "reward": 27.409146171063185,
+                "creation_time": 1767293683.847729,
                 "auxillary_file_paths": [
-                    "results\\duoCW-V1\\Worm\\Worm-0.pt"
+                    "results\\duoCW-V2\\Crawler\\Crawler-1499956.pt"
+                ]
+            },
+            {
+                "steps": 1557296,
+                "file_path": "results\\duoCW-V2\\Crawler\\Crawler-1557296.onnx",
+                "reward": 53.91414274173704,
+                "creation_time": 1767294392.4080894,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V2\\Crawler\\Crawler-1557296.pt"
+                ]
+            },
+            {
+                "steps": 943591,
+                "file_path": "results\\duoCW-V1\\Crawler\\Crawler-943591.onnx",
+                "reward": null,
+                "creation_time": 1767385140.238144,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Crawler\\Crawler-943591.pt"
+                ]
+            },
+            {
+                "steps": 999946,
+                "file_path": "results\\duoCW-V1\\Crawler\\Crawler-999946.onnx",
+                "reward": 53.65402184999906,
+                "creation_time": 1767454436.5781734,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Crawler\\Crawler-999946.pt"
+                ]
+            },
+            {
+                "steps": 1001917,
+                "file_path": "results\\duoCW-V1\\Crawler\\Crawler-1001917.onnx",
+                "reward": 53.64899023479837,
+                "creation_time": 1767454453.4834821,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Crawler\\Crawler-1001917.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 0,
-            "file_path": "results\\duoCW-V1\\Worm.onnx",
-            "reward": null,
-            "creation_time": 1767198688.8268383,
+            "steps": 1001917,
+            "file_path": "results\\duoCW-V1\\Crawler.onnx",
+            "reward": 53.64899023479837,
+            "creation_time": 1767454453.4834821,
             "auxillary_file_paths": [
-                "results\\duoCW-V1\\Worm\\Worm-0.pt"
+                "results\\duoCW-V1\\Crawler\\Crawler-1001917.pt"
+            ]
+        }
+    },
+    "Worm": {
+        "checkpoints": [
+            {
+                "steps": 7499973,
+                "file_path": "results\\duoCW-V2\\Worm\\Worm-7499973.onnx",
+                "reward": -43.14731511732806,
+                "creation_time": 1767293398.6829123,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V2\\Worm\\Worm-7499973.pt"
+                ]
+            },
+            {
+                "steps": 7581412,
+                "file_path": "results\\duoCW-V2\\Worm\\Worm-7581412.onnx",
+                "reward": -47.74517457864501,
+                "creation_time": 1767294392.463491,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V2\\Worm\\Worm-7581412.pt"
+                ]
+            },
+            {
+                "steps": 6967707,
+                "file_path": "results\\duoCW-V1\\Worm\\Worm-6967707.onnx",
+                "reward": null,
+                "creation_time": 1767385140.2893577,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Worm\\Worm-6967707.pt"
+                ]
+            },
+            {
+                "steps": 6999937,
+                "file_path": "results\\duoCW-V1\\Worm\\Worm-6999937.onnx",
+                "reward": -2.407734970251719,
+                "creation_time": 1767454203.0495915,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Worm\\Worm-6999937.pt"
+                ]
+            },
+            {
+                "steps": 7026033,
+                "file_path": "results\\duoCW-V1\\Worm\\Worm-7026033.onnx",
+                "reward": -2.3671868706450745,
+                "creation_time": 1767454453.4318867,
+                "auxillary_file_paths": [
+                    "results\\duoCW-V1\\Worm\\Worm-7026033.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 7026033,
+            "file_path": "results\\duoCW-V1\\Worm.onnx",
+            "reward": -2.3671868706450745,
+            "creation_time": 1767454453.4318867,
+            "auxillary_file_paths": [
+                "results\\duoCW-V1\\Worm\\Worm-7026033.pt"
             ]
         }
     },

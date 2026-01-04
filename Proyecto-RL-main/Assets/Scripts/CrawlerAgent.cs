@@ -39,7 +39,7 @@ public class CrawlerAgent : Agent
     private Transform m_Target; //Target the agent will walk towards during training.
 
     private float minDistanceToPrey;
-
+    private bool firstStep;
 
     [Header("Body Parts")][Space(10)] public Transform body;
     public Transform leg0Upper;
@@ -101,7 +101,7 @@ public class CrawlerAgent : Agent
             bodyPart.Reset(bodyPart);
         }
 
-        minDistanceToPrey = Vector3.Distance(body.position, m_Target.position);
+        
 
         //Random start rotation to help generalize
         /* body.rotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0); */
@@ -112,6 +112,8 @@ public class CrawlerAgent : Agent
 
         //Set our goal walking speed
         TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
+        minDistanceToPrey = Vector3.Distance(body.position, m_Target.position);
+        firstStep = true;
     }
 
     Vector3 GetRandomPos()
@@ -205,10 +207,8 @@ public class CrawlerAgent : Agent
         bpDict[leg1Lower].SetJointStrength(continuousActions[++i]);
         bpDict[leg2Lower].SetJointStrength(continuousActions[++i]);
         bpDict[leg3Lower].SetJointStrength(continuousActions[++i]);
-    }
 
-    void FixedUpdate()
-    {
+        Debug.Log(GetCumulativeReward());
         UpdateOrientationObjects();
 
         //Esto es visual
@@ -227,7 +227,14 @@ public class CrawlerAgent : Agent
 
         if (delta > 0)
         { //Si está más cerca
-            AddReward(delta * 0.5f);
+            if(!firstStep){
+                AddReward(delta * 0.5f);
+
+            }
+            else
+            {
+                firstStep = false;
+            }
             minDistanceToPrey = currentDist;
         }
 
@@ -251,6 +258,8 @@ public class CrawlerAgent : Agent
         float velReward = GetMatchingVelocityReward(velGoal, GetAvgVelocity());
         AddReward(velReward * 0.05f); */
     }
+
+
 
 
     /// <summary>

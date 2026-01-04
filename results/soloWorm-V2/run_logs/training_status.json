@@ -1,0 +1,65 @@
+{
+    "Worm": {
+        "checkpoints": [
+            {
+                "steps": 8499964,
+                "file_path": "results\\soloWorm-V2\\Worm\\Worm-8499964.onnx",
+                "reward": -1.6731467816759558,
+                "creation_time": 1767545560.3370645,
+                "auxillary_file_paths": [
+                    "results\\soloWorm-V2\\Worm\\Worm-8499964.pt"
+                ]
+            },
+            {
+                "steps": 8999997,
+                "file_path": "results\\soloWorm-V2\\Worm\\Worm-8999997.onnx",
+                "reward": -1.1659111604094505,
+                "creation_time": 1767548172.020622,
+                "auxillary_file_paths": [
+                    "results\\soloWorm-V2\\Worm\\Worm-8999997.pt"
+                ]
+            },
+            {
+                "steps": 9499938,
+                "file_path": "results\\soloWorm-V2\\Worm\\Worm-9499938.onnx",
+                "reward": -2.799833954657827,
+                "creation_time": 1767550886.8480346,
+                "auxillary_file_paths": [
+                    "results\\soloWorm-V2\\Worm\\Worm-9499938.pt"
+                ]
+            },
+            {
+                "steps": 9999994,
+                "file_path": "results\\soloWorm-V2\\Worm\\Worm-9999994.onnx",
+                "reward": -2.042355273332861,
+                "creation_time": 1767553276.167591,
+                "auxillary_file_paths": [
+                    "results\\soloWorm-V2\\Worm\\Worm-9999994.pt"
+                ]
+            },
+            {
+                "steps": 10000058,
+                "file_path": "results\\soloWorm-V2\\Worm\\Worm-10000058.onnx",
+                "reward": -2.042355273332861,
+                "creation_time": 1767553276.2286923,
+                "auxillary_file_paths": [
+                    "results\\soloWorm-V2\\Worm\\Worm-10000058.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10000058,
+            "file_path": "results\\soloWorm-V2\\Worm.onnx",
+            "reward": -2.042355273332861,
+            "creation_time": 1767553276.2286923,
+            "auxillary_file_paths": [
+                "results\\soloWorm-V2\\Worm\\Worm-10000058.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.5.1+cu121"
+    }
+}

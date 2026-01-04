@@ -50,7 +50,7 @@ namespace Unity.MLAgentsExamples
                 agent.AddReward(presaContactReward);
 
                 // Penalizar y terminar la presa
-                preyAgent.AddReward(-presaContactReward);
+                preyAgent.AddReward(-5f);
 
                 Debug.Log($"Reward depredador: {agent.GetCumulativeReward()} --- Reward gusano: {preyAgent.GetCumulativeReward()}");
                 Debug.Log($"COLLISION: {name} con {col.collider.name} | frame {Time.frameCount}");
