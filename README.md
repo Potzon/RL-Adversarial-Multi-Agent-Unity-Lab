@@ -49,5 +49,5 @@ mlagents-learn Config/duoCW-V1.yaml --run-id=test --no-graphics --env=Builds/Bui
 |-----------|---------|
 | Assets | Prefabs, Scripts, Models (.onnx), Scenes (ProyectoV1.unity) |
 | Builds/Build-V1 | Standalone exe for headless |
-| Config | YAML configs (duoCW-V1.yaml) |
+| Config | YAML configs (SoloCrawler, SoloWorm, duoCW-V1.yaml) |
 | Results | Checkpoints, logs |
