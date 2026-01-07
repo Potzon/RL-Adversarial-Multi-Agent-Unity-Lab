@@ -1,4 +1,4 @@
-# Reinforcement Learning Predator-Prey Project Deployment
+# Reinforcement Learning Adversarial Predator-Prey Unity Project
 
 ![Project image](img/img.png)
 
