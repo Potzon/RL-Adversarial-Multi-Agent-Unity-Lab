@@ -1,4 +1,4 @@
-# README.md - Reinforcement Learning Predator-Prey Project Deployment
+# Reinforcement Learning Predator-Prey Project Deployment
 
 ![Project image](img/img.png)
 
@@ -22,18 +22,24 @@ Use `Builds/Build-V1/RLV1 project.exe` for no-graphics runs.
 ## Training Setup
 ### Environment
 conda create -n mlagents python=3.10.12
+
 conda activate mlagents
+
 pip install torch==2.2.1 --index-url https://download.pytorch.org/whl/cu121
 
 ### ML-Agents
 git clone --branch release_23 https://github.com/Unity-Technologies/ml-agents.git
+
 cd ml-agents
+
 pip install ./mlagents-envs
+
 pip install ./ml-agents
 
 ### Commands
 - Visual training:
 cd <project-root>
+
 mlagents-learn Config/duoCW-V1.yaml --run-id=test --torch-device=cuda
 
 (Open ProyectoV1 scene first.)
