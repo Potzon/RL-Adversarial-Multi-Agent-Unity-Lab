@@ -38,9 +38,7 @@ pip install ./ml-agents
 
 ### Commands
 - Visual training:
-cd <project-root>
-
-mlagents-learn Config/duoCW-V1.yaml --run-id=test --torch-device=cuda
+cd <project-root> mlagents-learn Config/duoCW-V1.yaml --run-id=test --torch-device=cuda
 
 (Open ProyectoV1 scene first.)
 - Headless:
