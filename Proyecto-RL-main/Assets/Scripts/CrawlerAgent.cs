@@ -208,7 +208,6 @@ public class CrawlerAgent : Agent
         bpDict[leg2Lower].SetJointStrength(continuousActions[++i]);
         bpDict[leg3Lower].SetJointStrength(continuousActions[++i]);
 
-        Debug.Log(GetCumulativeReward());
         UpdateOrientationObjects();
 
         //Esto es visual
